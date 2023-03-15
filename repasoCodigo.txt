@@ -1,48 +1,50 @@
 using System;
 public class Program{
+	
+  const int POWER_BASE=2;
+	
   public static void Main() {
         // Display the number of command line arguments.
-        Console.WriteLine(CountBits(1234));
+        Console.WriteLine("Numero de 1s en el binario: "+CountBits(29));
     }
   
-  public static int CountBits(int n){
-	const int POWER_BASE=2;
-    bool stop=false;
-    double power=0;
-	int counter=1;
+  public static int CountBits(int decimalInput){
+    bool stop = false;
+    int power = 0;
+	int counter = 0;
 	do{
-      
-      power=Math.Pow(POWER_BASE, counter); 
+      power = (int)Math.Pow(POWER_BASE, counter); 
       counter++;
-      if(power>n){
+      if(power > decimalInput){
         stop=true;
       }
-    }
-	while (stop==false);
-    int result=ValidationBits(counter,n);
-    return result;
+    }while (stop==false);
+
+    return OnesCounter(counter, decimalInput);
   }
   
-  public static int ValidationBits(int counter, int n){
-    const int POWER_BASE=2;
-    double power=0;
-    double minus=0;
-    int countOnes=0;
-	double plus=0;
-    for (int index=counter-1; index>-1; index--){
-	  Console.WriteLine("bits"+index);
-      if(index==counter-1){minus=n;}
-      if(minus<(power=Math.Pow(POWER_BASE, index))){
+  public static int OnesCounter(int counter, int decimalInput){
+    int minus = 0;
+    int countOnes = 0;
+	int plus = 0;
+	  
+    for (int index = counter-1; index > -1; index--){
+	  
+	  int currentPower = (int)Math.Pow(POWER_BASE, index);
+		
+      if(index == counter-1){
+		  minus = decimalInput;
+	  }
+      if(minus < currentPower){
         continue;
       }
-      if(minus>=(power=Math.Pow(POWER_BASE, index))){
-		  power=Math.Pow(POWER_BASE, index);
-		  plus+=power;
-		  Console.WriteLine("power"+power);
-		  minus=n-plus;
+      else{
+		  plus += currentPower;
+		  minus = decimalInput - plus;
 		  countOnes+=1;
 	  }
-      if(plus==n){
+		
+      if(plus == decimalInput){
         break;
       }   
     }
