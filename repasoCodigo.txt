@@ -11,44 +11,42 @@ public class Program{
   public static int CountBits(int decimalInput){
     bool stop = false;
     int power = 0;
-	int counter = 0;
-	do{
+    int counter = 0;
+    do{
       power = (int)Math.Pow(POWER_BASE, counter); 
       counter++;
       if(power > decimalInput){
         stop=true;
       }
     }while (stop==false);
-
+    
     return OnesCounter(counter, decimalInput);
   }
   
   public static int OnesCounter(int counter, int decimalInput){
     int minus = 0;
     int countOnes = 0;
-	int plus = 0;
+    int plus = 0;
 	  
     for (int index = counter-1; index > -1; index--){
 	  
-	  int currentPower = (int)Math.Pow(POWER_BASE, index);
+      int currentPower = (int)Math.Pow(POWER_BASE, index);
 		
       if(index == counter-1){
-		  minus = decimalInput;
-	  }
+	minus = decimalInput;
+      }
       if(minus < currentPower){
         continue;
       }
       else{
-		  plus += currentPower;
-		  minus = decimalInput - plus;
-		  countOnes+=1;
-	  }
-		
+	  plus += currentPower;
+	  minus = decimalInput - plus;
+	  countOnes+=1;
+      }	
       if(plus == decimalInput){
         break;
       }   
     }
      return countOnes;
   }
-
 }
