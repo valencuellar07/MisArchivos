@@ -1,5 +1,7 @@
 using System;
 public class Program{
+
+  //Ejercicio de codewars
 	
   const int POWER_BASE=2;
 	
