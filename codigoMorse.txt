@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
+//Ejercicio de CodeWars
 // Dictionary CHAR_TO_MORSE in the class Preloaded is already defined to convert characters into their Morse Code equivilant.
 public class MorseEncrypt
 {
