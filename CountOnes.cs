@@ -7,7 +7,11 @@ public class Program{
 	
   public static void Main() {
         // Display the number of command line arguments.
-        Console.WriteLine("Numero de 1s en el binario: "+CountBits(29));
+		Console.WriteLine("Contador de cantidad de unos de un decimal convertido a binario.");
+		Console.WriteLine("Escribe un número en decimal:");
+		string decimalNum = Console.ReadLine();
+
+        Console.WriteLine("Numero de unos en el binario: "+CountBits(Int16.Parse(decimalNum)));
     }
   
   public static int CountBits(int decimalInput){
