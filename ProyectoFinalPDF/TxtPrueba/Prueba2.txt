@@ -1,0 +1,20 @@
+En otras palabras, una sucesión o progresión geométrica es una sucesión de números en la que cada término,
+ a partir del primero, se obtiene multiplicando al anterior un número fijo o constante, que se llama razón.
+
+Ejemplo 1. Escribir los cinco primeros términos de la sucesión geométrica definida por  a1 = 2  
+y  an + 1 = – 2an,  para  n > 1.
+Solución:
+La definición de la sucesión geométrica es recursiva, porque está dado el primer término  
+a1 = 2  y cada término siguiente se halla, a partir del primero, multiplicando la cantidad constante  
+– 2  al anterior.  Así tenemos:
+a1 = 2
+
+Esta nueva sucesión se conoce como sucesión de sumas parciales, y a   se le conoce como n-ésima suma 
+parcial.
+
+Se puede utilizar una nueva notación para representar cada una de las sumas parciales, esta notación 
+es la de sumatoria o notación sigma que representamos con el símbolo de la letra griega mayúscula sigma  .
+
+Ejemplo ilustrativo 1. Si se quieren sumar los primeros diez números naturales, se escribe la suma en 
+notación de sumatoria de la siguiente manera:
+

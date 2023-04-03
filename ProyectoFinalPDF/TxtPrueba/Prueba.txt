@@ -1,0 +1,11 @@
+Hola esta es una prueba para saber si en realidad está guardando como pdf 
+Si el dominio de una función es un conjunto finito de enteros consecutivos, 
+entonces la sucesión se denomina sucesión finita; ahora si el dominio es un conjunto 
+infinito de enteros consecutivos, entonces se denomina sucesión infinita. Es frecuente 
+usar la letra n para representar los elementos del dominio, pero igualmente se pueden usar 
+las letras i, j, k, m.
+Solución:
+Se observa que cada uno de los primeros diez términos de esta sucesión se obtiene sumando 
+8 al término inmediatamente anterior, iniciando en 7. (Se puede observar esto al realizar 
+la diferencia entre cada pareja de términos consecutivos y observar que es 8). Entonces, una 
+forma de generar esta sucesión es la descrita por la fórmula recursiva:
