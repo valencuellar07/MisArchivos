@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Robert la Rata</title>
+    <link rel="icon" href="./src/img/myIcon.PNG">
+
+    <!-- All CSS -->
+    <link rel="stylesheet" href="./src/css/style.css">
+
+    <!-- Basic libraries -->
+    <script src="./src/libs/three.js"></script>
+    <script src="./src/libs/three.js-master/build/three.min.js"></script>
+    <script src="./src/libs/three.js-master/build/three.js"></script>
+    <script src="./src/libs/DAT.GUI.min.js"></script>
+    <script src="./src/libs/Sound.js"></script>
+    <script src="./src/libs/collider/cannon.js"></script>
+    <script src="./src/libs/collider/cannon.min.js"></script>
+
+    <script src="./src/js/Stats.js"></script>
+
+    <!-- Load files from LOAD -->
+
+    <script src="./src/libs/load/DRACOLoader.js"></script>
+    <script src="./src/libs/load/GLTFLoader.js"></script>
+    <script src="./src/libs/load/MTLLoader.js"></script>
+    <script src="./src/libs/load/OBJLoader.js"></script>
+
+    <script src="./src/libs/OrbitControls.js"></script>
+    <script src="./src/js/main.js"></script>
+    
+
+</head>
+
+<body onload="startScene()">
+    
+    <audio id="songBack" src="./src/audio/musicaFondo.mp3" loop></audio>
+    <audio id="sonido3D" src="./src/audio/Shiny.mp3" loop></audio> <!--No funciona ponerle loop aqui
+                                                                    asi que lo corremos en animate()-->
+    <audio id="jaulaAbre" src="./src/audio/Jaula_Abierta.mp3"></audio>
+
+
+    <canvas id="app"></canvas> <!-- Se representa todo lo correspondiente con THREE JS-->
+    <div id="container">
+    </div>
+
+    <!--Panel de iniciar juego -->
+     
+    <!--Panel Start Game-->
+    <div id="menuPanel">
+        <div id="instructions">
+            <span id= "tituloJuego">Robert la rata</span>
+            <br />
+            <span id= "titulo" onclick="StartJuego()">Click para jugar</span>
+            <br /><br />
+            Moverse: WASD
+            <br /> 
+            Recoge los 6 quesos para adquirir fuerza y robar el diamante!!!
+        </div>    
+    </div>
+
+    <!-- Canvas Points -->
+    <div id="PanelPoints">
+        <span>Puntos: </span>
+        <span id="points">0</span>
+    </div>
+    <audio id="sonidoPuntos" src="./src/audio/Rata_Come.mp3"></audio>
+
+    <!--Panel Win-->
+    <div id="WinPanel" style="display: none;">
+        <span id="Actualizar" onclick="location.reload()">JUGAR DE NUEVO</span>
+    </div>
+    <audio id="WinMusic" src="./src/audio/Rata_Gana.mp3"></audio>
+
+    <!--Panel Lost-->
+    <div id="LostPanel" style="display: none;">
+        <span id="Actualizar" onclick="location.reload()">JUGAR DE NUEVO</span>
+    </div>
+    <audio id="LoseMusic" src="./src/audio/Rata_Pierde.mp3"></audio>
+
+    <!--timer,num vidas, autor-->
+    <div id="Timer" >
+        <span>Tiempo: </span>
+        <span id="tiempo">180</span>
+    </div>
+</body>
+</html>
